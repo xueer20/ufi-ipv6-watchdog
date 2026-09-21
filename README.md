@@ -5,6 +5,7 @@
 当随身 WiFi（中兴 U30 Air）出现 **IPv4 正常、IPv6 间歇性失效** 时，自动检测并重启基带，无需人工干预。
 
 <img width="1261" height="384" alt="image" src="https://github.com/user-attachments/assets/da19cad6-2559-4076-a317-31313244221e" />
+<img width="1263" height="689" alt="image" src="https://github.com/user-attachments/assets/375202f6-ae95-4eeb-a650-f738022bcec1" />
 
 ---
 
@@ -22,7 +23,7 @@
 
 | 功能 | 说明 |
 |------|------|
-| **IPv6 专属检测** | 只测 IPv6，不因 IPv4 异常误触发 |
+| **IPv6 检测** | 只测 IPv6，不因 IPv4 异常误触发 |
 | **多目标探测** | 同时 ping 阿里云、Cloudflare、Google 三个 IPv6 地址，任一可达即判定正常 |
 | **连续失败阈值** | 连续 2 个检测周期全部失败才触发重启，减少误报 |
 | **可靠 AT 通道** | 优先使用 `sendat -c "AT+CFUN=1,1"`，失败再回退到 `ufi_req` |
@@ -33,7 +34,7 @@
 | **一键安装/修复** | 插件内完成脚本部署、权限、自启、启动 |
 | **手动重启基带** | 调用已验证的 `handleAT('AT+CFUN=1,1')` |
 | **实时日志** | 检测结果、重启过程、冷却状态全部写入日志，面板可查看 |
-| **IPv6 状态指示** | 标题栏实时显示「IPv6 正常 / 异常」 |
+| **标题栏状态指示** | 标题栏实时显示「IPv6 正常 / 异常」 |
 
 ---
 
