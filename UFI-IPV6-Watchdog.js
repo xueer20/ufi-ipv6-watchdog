@@ -4,7 +4,7 @@
   const PANEL_ID = 'ipv6_monitor_panel';
 
   const BUILTIN_SCRIPT = `#!/system/bin/sh
-# IPv6 断网自重启基带
+# IPv6 失效自重启基带网络
 # 只检测 IPv6；IPv4 正常不触发
 
 BASE_DIR="/data/kano_ipv6_monitor"
@@ -611,12 +611,12 @@ esac
   const showHelp = () => {
     const { el, close } = createFixedToast('ipv6_help', `
       <div style="pointer-events:all;width:85vw;max-width:380px">
-        <div class="title" style="margin:0">IPv6 断网自重启基带</div>
+        <div class="title" style="margin:0">IPv6 失效自重启基带</div>
         <div style="margin:10px 0;font-size:13px;line-height:1.7">
           每 5 分钟检测 3 个 IPv6 公网地址，任一通即正常。<br>
-          连续 2 次全失败 → <code>sendat -c "AT+CFUN=1,1"</code><br>
-          发送成功后等 90 秒复检，再进入 30 分钟冷却。<br>
-          手动重启走 handleAT。
+          连续 2 次全失败自动重启基带 → <code>sendat -c "AT+CFUN=1,1"</code><br>
+          重启成功后等 90 秒复检，再进入 30 分钟冷却。<br>
+          By xueer20.
         </div>
         <div style="text-align:right">
           <button style="font-size:.64rem" id="close_ipv6_help">关闭</button>
@@ -673,7 +673,7 @@ esac
       <div class="ipv6-panel">
         <!-- 标题行：名称 + 服务状态 + IPv6状态 + 唯一展开按钮 -->
         <div class="ipv6-title" id="ipv6_title_click">
-          <strong>🌐 IPv6 断网自重启基带</strong>
+          <strong>🌐 IPv6 失效自重启基带</strong>
           <span class="ipv6-chip" id="ipv6_status_mini">○ 读取中</span>
           <span class="ipv6-chip" id="ipv6_net_status">IPv6 --</span>
           <button id="ipv6_collapse_btn" style="font-size:.5rem;padding:1px 7px;margin-left:auto">▽</button>
@@ -693,7 +693,7 @@ esac
           </div>
 
           <div class="ipv6-actions">
-            <button id="ipv6_repair_btn" style="background:rgba(255,200,0,.2);color:#ffd700">🔧 首次安装/修复</button>
+            <button id="ipv6_repair_btn" style="background:rgba(255,200,0,.2);color:#ffd700">🔧 安装/修复</button>
             <button id="ipv6_check_btn">🔍 立即检测</button>
             <button id="ipv6_start_btn">▶ 启动</button>
             <button id="ipv6_stop_btn">⏹ 停止</button>
