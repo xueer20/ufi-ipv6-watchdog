@@ -5,7 +5,8 @@
 当随身 WiFi（中兴 U30 Air）出现 **IPv4 正常、IPv6 间歇性失效** 时，自动检测并重启基带，无需人工干预。
 
 <img width="1261" height="384" alt="image" src="https://github.com/user-attachments/assets/da19cad6-2559-4076-a317-31313244221e" />
-<img width="1263" height="689" alt="image" src="https://github.com/user-attachments/assets/375202f6-ae95-4eeb-a650-f738022bcec1" />
+<img width="1255" height="579" alt="image" src="https://github.com/user-attachments/assets/4ef9422c-17aa-418f-a1ca-e23b99d288b8" />
+
 
 ---
 
